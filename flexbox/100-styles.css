@@ -61,7 +61,7 @@
   
     /** HEADER **/
     --header-padding: 4rem 0 0;
-  
+
     /** FOOTER **/
     --footer-padding: 5rem 0 1rem;
   
@@ -160,25 +160,13 @@
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
   }
-  
-  /*** 2. LAYOUT ***/
-  
-  /* Layout
-      ============================= */
-  
-  .container {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
   /* Grid
       ============================= */
-
+  
   .row {
     display: flex;
   }
-  
+
   ul.row {
     margin: -1rem;
     padding: 0;
@@ -200,12 +188,16 @@
   /* Navbar
       ============================= */
   
+  .navbar-menu {
+    float: right;
+  }
+  
   .nav {
-    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
+    display: flex;
   }
   
   .nav .nav-item {
@@ -215,10 +207,6 @@
     letter-spacing: var(--nav-item-letter-spacing);
   }
   
-  .nav .nav-item + .nav-item {
-    margin: var(--nav-item-margin);
-  }
-
   .nav .nav-link {
     display: block;
     padding: 0.5rem 0;
@@ -245,21 +233,25 @@
     background-color: var(--color-primary);
     width: 100%;
   }
+
+  .nav .nav-item + .nav-item {
+    margin: var(--nav-item-margin);
+  }
   
   /* Header
       ============================= */
   
-  .header {
-    padding: var(--header-padding);
-         position: relative;
-         z-index: 3;
-         background: transparent !important;
-  }
-
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .header {
+    padding: var(--header-padding);
+    position: relative;
+    z-index: 3;
+    background: transparent !important;
   }
   
   /* Footer
@@ -358,14 +350,14 @@
     color: var(--color-white);
     text-transform: uppercase;
   }
-  
+
   .hero-homepage {
     background-position: 75% 0;
     background-repeat: no-repeat;
     background-size: 90rem auto;
     background-color: #010101;
   }
-
+  
   .section-hero .section-title {
     margin-bottom: 5rem;
   }
@@ -377,30 +369,27 @@
     justify-content: center;
     min-height: 50vh;
   }
-  
-  /* Section Latest news
-    ============================= */
-  
-  .section-latest-news .row {
+
+  /* Section Latest news =============================*/
+
+  .section-blog .row {
     flex-direction: row-reverse;
   }
-
-  /* Section SERVICES
-    ============================= */
   
+  /*** 4. CARD ***/
+
+  /* Section SERVICES ============================= */
+
   .section-services .row {
     flex-wrap: wrap;
   }
-
-  /* Section ABOUT US
-    ============================= */
   
+  /* Section ABOUT US ============================= */
+
   .section-about-us [class*='col-'] {
     align-self: center;
   }
 
-  /*** 4. CARD ***/
-  
   /* Card (all styles)
       ============================= */
   
@@ -528,7 +517,7 @@
   }
 
   /*** ARTICLE PAGE ***/
-  /* Section HERO (article)
+/* Section HERO (article)
     ============================= */
 
   .hero-article {
@@ -574,9 +563,26 @@
     width: 100%;
   }
 
+  .post-content p:first-child {
+    font-size: var(--font-size-x-large);
+  }
+
+  .post-content .img-caption {
+    margin: 1rem 0;
+    padding: 0 .5rem;
+    font-size: var(--font-size-small);
+    color: var(--color-grey);
+    text-align: center;
+  }
+
   .post-aside {
     order: -1;
     min-width: 20%;
+  }
+
+  .post img {
+    width: 100%;
+    height: auto;
   }
 
   /* Post Meta
@@ -593,13 +599,13 @@
     display: block;
   }
 
-  .post-meta-list [class*="post-meta-"] {
+  .post-meta-list [class*='post-meta-'] {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--color-light-grey);
   }
 
-  .post-meta-list [class*="post-meta"]:last-child {
+  .post-meta-list [class*='post-meta-']:last-child {
     border: none;
     margin-bottom: 3rem;
   }
@@ -622,21 +628,4 @@
 
   .tag-list li:last-child::after {
     content: "";
-  }
-
-  .post img {
-    width: 100%;
-    height: auto;
-  }
-
-  .post-content + p {
-    font-size: var(--font-size-x-large);
-  }
-
-  .post-content .img-caption {
-    margin: 1rem 0;
-    padding: 0 .5rem;
-    font-size: var(--font-size-small);
-    color: var(--color-grey);
-    text-align: center;
   }
